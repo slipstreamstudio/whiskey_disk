@@ -202,7 +202,7 @@ class WhiskeyDisk
   end
 
   def if_task_defined(task, cmd)
-    %Q(rakep=`#{env_vars} bundle exec rake -T` && if [[ `echo "${rakep}" | grep #{task}` != "" ]]; then #{cmd}; fi )
+    %Q(#{cmd})
   end
 
   def safe_branch_checkout(path, my_branch)
